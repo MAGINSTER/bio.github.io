@@ -1617,7 +1617,6 @@
         <button class="tab-btn active" type="button" data-tab="links">Ссылки</button>
         <button class="tab-btn" type="button" data-tab="scripts">Скрипты</button>
         <button class="tab-btn" type="button" data-tab="about">Обо мне</button>
-        <button class="tab-btn" type="button" data-tab="referral">Рефералка</button>
       </nav>
 
       <section class="tab-panel active" id="tab-links">
@@ -2044,7 +2043,7 @@
           </div>
 
           <p class="about-text">
-            Играю в SAMP, чаще всего на Arizona/Rodina. Делаю или доделываю небольшие удобные скрипты для MoonLoader (вайбкодик хех)
+            Играю в SAMP, чаще всего на Arizona. Делаю или доделываю небольшие удобные скрипты для MoonLoader
           </p>
 
           <p class="about-text">
@@ -2063,14 +2062,14 @@
             <div class="pc-spec-grid">
               <div class="pc-spec">
                 <div class="pc-spec-label">Процессор</div>
-                <div class="pc-spec-value">AMD Ryzen 7 7800X3D</div>
-                <div class="pc-spec-note">AM5 · 8 ядер · 4.2 ГГц · L3 96 МБ</div>
+                <div class="pc-spec-value">AMD Ryzen 5 2600</div>
+                <div class="pc-spec-note">AM4 · 6 ядер · 3.4 ГГц · L3 16 МБ</div>
               </div>
 
               <div class="pc-spec">
                 <div class="pc-spec-label">Видеокарта</div>
-                <div class="pc-spec-value">KFA2 GeForce RTX 5070 ROCK(X) OC 3FAN RGB Black</div>
-                <div class="pc-spec-note">12 ГБ GDDR7 · 192-bit · PCIe 5.0</div>
+                <div class="pc-spec-value">NVIDIA GeForce GTX 1660 Super</div>
+                <div class="pc-spec-note">PCIe 3.0 · 6 ГБ · GDDR6 · 192 бит</div>
               </div>
 
               <div class="pc-spec">
@@ -2143,6 +2142,7 @@
         </div>
       </section>
 
+      <!-- Referral section removed from the page.
       <section class="tab-panel" id="tab-referral">
         <div class="ref-card">
           <div class="ref-top">
@@ -2204,6 +2204,7 @@
           </div>
         </div>
       </section>
+      -->
 
       <footer>
         © <span id="y"></span> Ilya Fedyaev<br>
@@ -2354,7 +2355,6 @@
       links: document.getElementById('tab-links'),
       scripts: document.getElementById('tab-scripts'),
       about: document.getElementById('tab-about'),
-      referral: document.getElementById('tab-referral')
     };
 
     const setTab = (tabName) => {
@@ -2528,18 +2528,6 @@
 
     window.addEventListener('scroll', () => hideCommandTooltip(0), { passive: true });
     window.addEventListener('resize', () => hideCommandTooltip(0));
-
-    const copyRefCode = document.getElementById('copyRefCode');
-    if (copyRefCode) {
-      copyRefCode.addEventListener('click', async () => {
-        try {
-          await navigator.clipboard.writeText('/present #фарм');
-          showToast('Команда /present #фарм скопирована');
-        } catch (e) {
-          showToast('Не удалось скопировать команду');
-        }
-      });
-    }
 
     document.getElementById('discordCopy').addEventListener('click', async (event) => {
       event.preventDefault();
